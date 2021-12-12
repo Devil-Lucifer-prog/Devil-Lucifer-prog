@@ -1,5 +1,5 @@
 import java.util.*;
-class Binary_Search_Bubble_Sort
+class Binary_Search_Selection_Sort
 {
     public static void main()
     {
@@ -18,20 +18,25 @@ class Binary_Search_Bubble_Sort
         int lower=0;
         int upper=n-1;
         int flag=0;
+        int min;
         int z=0;
-        for(int k=0;k<n-1;k++)
+        for(int k=0;k<n;k++)
         {
-            for(int l=0;l<(n-1)-k;l++)
+            min=a[k];
+            z=k;
+            for(int j=k+1;j<n;j++)
             {
-               if(a[l]>a[l+1])
-               {
-                   z=a[l];
-                   a[l]=a[l+1];
-                   a[l+1]=z;
-               }
+                if(min>a[j])
+                { 
+                    z=j;
+                                        min=a[j];
+                                        
+                                    }
             }
+            a[z]=a[k];
+            a[k]=min;
+        
         }
-           
         while(lower<=upper)
         {
             mid=(lower+upper)/2;
