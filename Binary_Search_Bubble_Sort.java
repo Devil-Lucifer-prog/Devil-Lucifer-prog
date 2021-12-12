@@ -18,19 +18,19 @@ class Binary_Search_Bubble_Sort
         int lower=0;
         int upper=n-1;
         int flag=0;
-        int k=0;
-         for(int l=0;l<n;l++)
+        int z=0;
+        for(int k=0;k<n-1;k++)
+        {
+            for(int l=0;l<(n-1)-k;l++)
             {
-                for(int m=l+1;m<n;m++)
-                {
-                    if(a[l]>a[m])
-                    {
-                        k=a[l];
-                        a[l]=a[m];
-                        a[m]=k;
-                    }
-                }
+               if(a[l]>a[l+1])
+               {
+                   z=a[l];
+                   a[l]=a[l+1];
+                   a[l+1]=z;
+               }
             }
+        }
            
         while(lower<=upper)
         {
